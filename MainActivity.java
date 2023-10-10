@@ -1,4 +1,4 @@
-package com.example.celsius_to_fahrenheit;
+package com.example.add;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 EditText e1;
+EditText e2;
 TextView tv;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -17,13 +18,39 @@ TextView tv;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         e1=findViewById(R.id.e1);
-        tv=findViewById(R.id.tv);
+        e2=findViewById(R.id.e2);
+        tv=findViewById(R.id.res);
     }
 
-    public void fah(View view)
+    public void add(View view)
     {
-        double num= Double.parseDouble(e1.getText().toString());
-        double res=num*(1.8)+32;
+        int num1= Integer.parseInt(e1.getText().toString());
+        int num2= Integer.parseInt(e2.getText().toString());
+        int res=num1+num2;
+        tv.setText(""+res);
+    }
+
+    public void minus(View view)
+    {
+        int num1= Integer.parseInt(e1.getText().toString());
+        int num2= Integer.parseInt(e2.getText().toString());
+        int res=num1-num2;
+        tv.setText(""+res);
+    }
+
+    public void multiply(View view)
+    {
+        int num1= Integer.parseInt(e1.getText().toString());
+        int num2= Integer.parseInt(e2.getText().toString());
+        int res=num1*num2;
+        tv.setText(""+res);
+    }
+
+    public void divide(View view)
+    {
+        int num1= Integer.parseInt(e1.getText().toString());
+        int num2= Integer.parseInt(e2.getText().toString());
+        int res=num1/num2;
         tv.setText(""+res);
     }
 }
